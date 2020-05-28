@@ -1,10 +1,35 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Pagina principal";
+    ViewData["Title"] = "Login";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Bem vindo(a)</h1>
-    <p>Aprenda a desenvolver em .NET core na <a href="https://docs.microsoft.com/aspnet/core">documentação oficial</a> da Microsoft.</p>
-</div>
+<div class="container">
+    <a class="links" id="paracadastro"></a>
+    <a class="links" id="paralogin"></a>
+
+    <div class="content">
+        <div class="col-md-4">
+            <div id="login">
+                <form method="post" action="">
+                    <h1>Login</h1>
+
+                    <div class="form-group">
+                        <label class="control-label">Nome</label>
+                        <input class="form-control" placeholder="joaodasilva@gmail.com" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Senha</label>
+                        <input class="form-control" type="password" placeholder="****" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Salvar" class="btn btn-success" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
