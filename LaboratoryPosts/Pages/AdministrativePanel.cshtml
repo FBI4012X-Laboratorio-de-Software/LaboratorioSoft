@@ -7,9 +7,9 @@
 <h1>Painel administrativo</h1>
 
 
-<p>
-    <a asp-action="Create" class="btn-success">Criar novo</a>
-</p>
+<div class="form-group">
+    <input class="btn btn-success" value="Criar novo" />
+</div>
 <table class="table table-striped table-hover">
     <thead>
         <tr class="success">
@@ -25,46 +25,9 @@
             <th>
 
             </th>
-            <th>
-
-            </th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>
-                1
-            </td>
-            <td>
-                Nome 1
-            </td>
-            <td>
-                arovereris verderes 1
-            </td>
-            <td>
-                Editar
-            </td>
-            <td>
-                Excluir
-            </td>
-        </tr>
-        <tr>
-            <td>
-                2
-            </td>
-            <td>
-                Nome 2
-            </td>
-            <td>
-                arovereris verderes 2
-            </td>
-            <td>
-                Editar
-            </td>
-            <td>
-                Excluir
-            </td>
-        </tr>
         <tr>
             <td>
                 3
@@ -76,10 +39,8 @@
                 arovereris verderes 3
             </td>
             <td>
-                Editar
-            </td>
-            <td>
-                Excluir
+                <a>Editar</a> | 
+                <a>Excluir</a>
             </td>
         </tr>
     </tbody>
