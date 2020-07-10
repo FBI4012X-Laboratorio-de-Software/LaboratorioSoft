@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using LaboratoryPosts.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace LaboratoryPosts
 {
@@ -26,6 +27,11 @@ namespace LaboratoryPosts
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                    options.LoginPath = "/Index"
+                );
+
             services.AddDbContext<LaboratoryDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddRazorPages();
             services.AddScoped<UserService>();
@@ -49,9 +55,8 @@ namespace LaboratoryPosts
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
