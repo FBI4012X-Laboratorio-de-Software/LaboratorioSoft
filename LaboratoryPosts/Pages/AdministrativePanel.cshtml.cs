@@ -15,5 +15,15 @@ namespace LaboratoryPosts.Pages
         {
 
         }
+
+        public IActionResult OnGetVizualize(int id)
+        {
+            return Redirect("/Vizualization");
+        }
+
+        public IActionResult OnGetAlterPost(int id)
+        {
+            return Redirect("/AlterPost");
+        }
     }
 }
